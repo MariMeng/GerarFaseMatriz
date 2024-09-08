@@ -2,13 +2,12 @@ package GerarFaseMatriz;
 
 import java.util.Random;
 
-public class FaseMatriz {
-
+public class GerarFase {
     private int largura;
     private int altura;
     private int mat[][];
 
-    public FaseMatriz(int largura, int altura) {
+    public GerarFase(int largura, int altura) {
         this.largura = largura;
         this.altura = altura;
         this.mat = new int[largura][altura];
@@ -43,7 +42,7 @@ public class FaseMatriz {
         for (int i = 1; i < largura - 1; i++) {
             for (int j = 1; j < altura - 1; j++) {
                 num = random.nextInt(10);
-                if (mat[i][j] == 0 && mat[i][j] <= 2) {
+                if (mat[i][j] == 0 && num <= 2) {
                     mat[i][j] = 3;
                 }
             }
@@ -55,12 +54,13 @@ public class FaseMatriz {
             for (int j = 0; j < this.altura; j++) {
                 System.out.print(mat[i][j] + " ");
             }
+            System.out.println("");
         }
-        System.out.println("");
+
     }
 
     public static void main(String[] args) {
-        FaseMatriz fase = new FaseMatriz(5, 5);
+        GerarFase fase = new GerarFase(7, 7);
         fase.matrizFase();
         fase.imprimirMatrizFase();
     }
